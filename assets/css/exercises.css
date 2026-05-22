@@ -1,0 +1,16 @@
+/* Simple shared styles for exercises */
+:root{--bg:#f6f8fb;--card:#fff;--accent:#2b6cb0;--muted:#666}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background:var(--bg); margin:0;color:#0b2447}
+.container{max-width:900px;margin:28px auto;padding:16px}
+.card{background:var(--card);border-radius:10px;padding:20px;box-shadow:0 6px 18px rgba(11,36,71,0.06)}
+header.page{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+header.page h1{margin:0;font-size:1.4rem;color:var(--accent)}
+.form-row{display:flex;gap:8px;align-items:center;margin:12px 0}
+input[type=text]{padding:8px;border-radius:6px;border:1px solid #d0d7e6;flex:1}
+input[type=submit], .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;border:none;text-decoration:none;cursor:pointer}
+.controls{display:flex;gap:8px;margin-top:12px}
+.btn.secondary{background:#eef6ff;color:var(--accent);box-shadow:none}
+.hint, .solution{background:#fbfdff;border-left:4px solid #e6eef9;padding:12px;margin-top:10px;border-radius:6px;display:none;color:#112}
+.result{background:#f3f9ff;border:1px solid #dceffd;padding:10px;border-radius:6px;margin-top:12px;white-space:pre-wrap}
+footer{margin-top:18px;color:var(--muted);font-size:0.9rem;text-align:center}
+@media (max-width:600px){.form-row{flex-direction:column;align-items:stretch}.controls{flex-direction:column}}

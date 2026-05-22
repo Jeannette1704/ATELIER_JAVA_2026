@@ -1,71 +1,73 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-<title>Boucles</title>
+  <meta charset="utf-8">
+  <title>Boucles</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="assets/css/exercises.css">
+  <script src="assets/js/exercises.js" defer></script>
 </head>
-<body bgcolor=white>
-<h1>Exercices sur les boucles</h1>
-<form action="#" method="post">
-    <label for="inputValeur">Saisir le nombre d'étoiles : </label>
-    <input type="text" id="inputValeur" name="valeur">
-    <input type="submit" value="Afficher">
-</form>
+<body>
+  <div class="container">
+    <div class="card">
+      <header class="page"><h1>Exercices sur les boucles</h1></header>
 
-<%-- Récupération de la valeur saisie par l'utilisateur --%>
-<% String valeur = request.getParameter("valeur"); %>
-    
-<%-- Vérification de l'existence de la valeur --%>
-<% if (valeur != null && !valeur.isEmpty()) { %>
+      <form action="#" method="post" class="form-row">
+        <input type="text" id="inputValeur" name="valeur" data-type="number" placeholder="Saisir le nombre d'étoiles">
+        <input type="submit" value="Afficher" class="btn">
+      </form>
 
-<%-- Boucle for pour afficher une ligne d'étoiles --%>
-    <%int cpt = Integer.parseInt(valeur); %>
-    <p>
-    <% for (int i = 1; i <= cpt; i++) { %>
-       <%= "*" %>
-    <% } %>
-    </p>
+      <%-- Récupération de la valeur saisie par l'utilisateur --%>
+      <% String valeur = request.getParameter("valeur"); %>
+          
+      <%-- Vérification de l'existence de la valeur --%>
+      <% if (valeur != null && !valeur.isEmpty()) { %>
 
-<h2>Exercice 1 : Le carré d'étoiles</h2>
-<p>Ecrire le code afin de produire un carré d'étoile</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>*****</br>*****</br>*****</br>*****</br>*****</p>
+      <%-- Boucle for pour afficher une ligne d'étoiles --%>
+          <%int cpt = Integer.parseInt(valeur); %>
+          <div class="result">
+          <% for (int i = 1; i <= cpt; i++) { %>
+             <%= "*" %>
+          <% } %>
+          </div>
 
-<h2>Exercice 2 : Triangle rectangle gauche</h2>
-<p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>*</br>**</br>***</br>****</br>*****</p>
+      <% } %>
 
-<h2>Exercice 3 : Triangle rectangle inversé</h2>
-<p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>*****</br>****</br>***</br>**</br>*</p>
+      <h2>Exercices proposés</h2>
+      <ol>
+        <li>Le carré d'étoiles</li>
+        <li>Triangle rectangle (gauche)</li>
+        <li>Triangle rectangle inversé</li>
+        <li>Triangle rectangle (droite)</li>
+        <li>Triangle isocèle</li>
+        <li>Demi losange</li>
+        <li>Table de multiplication</li>
+      </ol>
 
-<h2>Exercice 4 : Triangle rectangle 2</h2>
-<p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;***</br>&nbsp;&nbsp;****</br>*****</p>
+      <div class="controls">
+        <button type="button" class="btn secondary" data-toggle="hint-boucles" data-showtext="Afficher l'indice" data-hidetext="Masquer l'indice">Afficher l'indice</button>
+        <button type="button" class="btn secondary" data-toggle="sol-boucles" data-showtext="Afficher la solution" data-hidetext="Masquer la solution">Afficher la solution</button>
+      </div>
 
-<h2>Exercice 5 : Triangle isocele</h2>
-<p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;***</br>&nbsp;****</br>*****</p>
+      <div id="hint-boucles" class="hint">
+        Indice : pour les formes, pensez aux boucles imbriquées (une pour les lignes, une pour les colonnes). Commencez par afficher une seule ligne puis répétez.
+      </div>
+      <div id="sol-boucles" class="solution">
+        Exemple (carré n x n) :
+        <pre>
+for(int i=0;i<n;i++){
+  for(int j=0;j<n;j++){
+    out.print("*");
+  }
+  out.println();
+}
+        </pre>
+      </div>
 
-<h2>Exercice 6 : Le demi losange</h2>
-<p>Ecrire le code afin de produire un losange</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;***</br>&nbsp;&nbsp;****</br>*****</p>
-<p>*****</br>&nbsp;&nbsp;****</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</p>
+      <p style="margin-top:16px"><a href="index.html">← Retour au sommaire</a></p>
 
-<h2>Exercice 7 : La table de multiplication</h2>
-<p>Ecrire le code afin de créser une table de multiplication</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>5 x 1 = 5</p>
-<p>5 x 2 = 10</p>
-<p>5 x 3 = 15</p>
-<p>5 x 4 = 20</p>
-<p>5 x 5 = 25</p>
-
-<% } %>
-<p><a href="index.html">Retour au sommaire</a></p>
+    </div>
+  </div>
 </body>
 </html>
