@@ -1,29 +1,46 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-<title>Java</title>
-<meta charset="UTF-8">  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atelier Java 2026</title>
+  <style>
+    :root{--bg:#f6f8fb;--card:#ffffff;--accent:#2b6cb0;--muted:#657786}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#0f172a; margin:0}
+    header{background:linear-gradient(90deg,#2b6cb0 0%,#4c8bd6 100%); color:#fff; padding:36px 0; text-align:center}
+    header h1{margin:0;font-size:1.75rem}
+    header p{margin:6px 0 0;opacity:.95}
+    .container{max-width:900px;margin:28px auto;padding:0 16px}
+    .card{background:var(--card);border-radius:12px;box-shadow:0 6px 18px rgba(17,24,39,0.08);padding:28px}
+    .intro{color:var(--muted);margin:0 0 18px}
+    .grid{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;box-shadow:0 6px 12px rgba(43,108,176,0.12)}
+    .btn.secondary{background:#e6eef9;color:var(--accent);box-shadow:none}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:0.9rem}
+    @media (max-width:600px){.grid{flex-direction:column}.btn{width:100%;text-align:center}}
+  </style>
 </head>
-<body bgcolor=white>
+<body>
+  <header>
+    <h1>Atelier Java — Exercices JSP</h1>
+    <p>Pratiquez les boucles, conditions, chaînes et tableaux</p>
+  </header>
 
-<table border="0">
-<tr>
-<td>
-</td>
-<td>
-<h1>Exercices de programmation en JSP (Java)</h1>
-<p>Ceci est votre page d'exercices Java : Nom Prénom
-</td>
-</tr>
-</table>
-<h2>Liste de vos exercices</h2>
-<p>
-<ol>
-<li>Série d'exercices sur les boucles : <a href="lesboucles.jsp"> Les boucles</a>
-<li>Série d'exercices sur les conditions : <a href="lesconditions.jsp"> Les conditions</a>
-<li>Série d'exercices sur les chaines de caractères : <a href="leschaines.jsp"> Les String</a>
-<li>Série d'exercices sur les tableaux : <a href="lestableaux.jsp"> Les tableaux</a>
-</ol>
+  <main class="container">
+    <section class="card">
+      <p class="intro">Bienvenue — modifiez les pages JSP dans votre dépôt. Chaque commit redéploie automatiquement l'application.</p>
 
+      <h2>Accès rapide aux exercices</h2>
+      <div class="grid">
+        <a class="btn" href="lesboucles.jsp">Les boucles</a>
+        <a class="btn" href="lesconditions.jsp">Les conditions</a>
+        <a class="btn" href="leschaines.jsp">Les chaînes</a>
+        <a class="btn" href="lestableaux.jsp">Les tableaux</a>
+        <a class="btn secondary" href="Select_BDD.jsp">Exercices BDD</a>
+      </div>
+
+      <footer>Déployé via GitHub Actions • Tomcat</footer>
+    </section>
+  </main>
 </body>
 </html>
-
